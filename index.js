@@ -1,9 +1,24 @@
 function isPalindrome(word) {
-  // Write your algorithm here
+  let reversedWord = ''
+  for (let i=word.length-1; i>=0; i--) {
+    reversedWord = reversedWord + word[i];
+  }
+  console.log(reversedWord)
+  return (reversedWord === word)
 }
 
+
+
 /* 
-  Add your pseudocode here
+  Before looking at the video, I think this will use the decrementing for loop.
+
+  Pseudo: 
+    declare and empty string for reversed word 
+    Then, use a for loop to start at the end of the string,
+    On each iteration, populate the new sting with each letter.
+    Then do the same test, if reversedWord equals word.
+
+
 */
 
 /*
@@ -20,6 +35,16 @@ if (require.main === module) {
 
   console.log("Expecting: false");
   console.log("=>", isPalindrome("robot"));
+
+  console.log("");
+
+  console.log("Expecting: true");
+  console.log("=>", isPalindrome("mom"));
+
+  console.log("");
+
+  console.log("Expecting: false");
+  console.log("=>", isPalindrome("interior"));
 }
 
 module.exports = isPalindrome;
